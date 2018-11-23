@@ -46,10 +46,10 @@
                                            FROM t_user
                                           WHERE login_id = ?"
                 authorities-by-username-query="SELECT login_id, role_name
-                                             FROM t_role
-                                                  INNER JOIN t_user_role ON t_user_role.role_id = t_role.id
-                                                  INNER JOIN t_user ON t_user.id = t_user_role.user_id
-                                            WHERE login_id = ?"/>
+                                                 FROM t_role
+                                                      INNER JOIN t_user_role ON t_user_role.role_id = t_role.id
+                                                      INNER JOIN t_user ON t_user.id = t_user_role.user_id
+                                                WHERE login_id = ?"/>
         </authentication-provider>
     </authentication-manager>
 

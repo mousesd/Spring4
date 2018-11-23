@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>App04</groupId>
-    <artifactId>App04</artifactId>
+    <groupId>App05</groupId>
+    <artifactId>App05</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>App04</name>
+    <name>App05</name>
     <properties>
         <org.springframework-version>4.2.6.RELEASE</org.springframework-version>
         <org.springframework.security-version>4.0.4.RELEASE</org.springframework.security-version>
@@ -108,7 +108,7 @@
     </dependencies>
 
     <build>
-        <finalName>app04</finalName>
+        <finalName>app05</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

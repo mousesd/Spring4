@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SqlDialectInspection, SqlNoDataSourceInspection -->
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+             xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/security
+                http://www.springframework.org/schema/security/spring-security.xsd
+                http://www.springframework.org/schema/jdbc
+                http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd">
+
+    <http>
+        <intercept-url pattern="/top.jsp" access="permitAll()"/>
+        <intercept-url pattern="/admin/**" access="hasAuthority('ROLE_ADMIN')"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <form-login default-target-url="/top.jsp"/>
+        <logout logout-url="/logout" logout-success-url="/top.jsp"/>
+        <csrf disabled="true"/>
+    </http>
+
+    <!-- InMemory authentication
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="user" password="userpassword" authorities="ROLE_USER"/>
+                <user name="admin" password="adminpassword" authorities="ROLE_ADMIN"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+    -->
+
+    <!-- Database authentication -->
+    <jdbc:embedded-database id="authDataSource" type="H2">
+        <jdbc:script location="classpath:/META-INF/db/ddl.sql"/>
+        <jdbc:script location="classpath:/META-INF/db/dml.sql"/>
+    </jdbc:embedded-database>
+
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service
+                data-source-ref="authDataSource"
+                users-by-username-query="SELECT login_id, password, true
+                                           FROM t_user
+                                          WHERE login_id = ?"
+                authorities-by-username-query="SELECT login_id, role_name
+                                                 FROM t_role
+                                                      INNER JOIN t_user_role ON t_user_role.role_id = t_role.id
+                                                      INNER JOIN t_user ON t_user.id = t_user_role.user_id
+                                                WHERE login_id = ?"/>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

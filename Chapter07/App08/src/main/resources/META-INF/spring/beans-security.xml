@@ -55,7 +55,7 @@
     </authentication-manager>
     -->
 
-    <beans:bean id="userService" class="net.homenet.SampleJdbcDaoImpl">
+    <beans:bean id="userService" class="net.homenet.authentication.SampleJdbcDaoImpl">
         <beans:property name="dataSource" ref="authDataSource"/>
         <beans:property name="usersByUsernameQuery">
             <beans:value>

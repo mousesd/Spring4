@@ -1,5 +1,6 @@
 package net.homenet.configuration;
 
+import net.homenet.authentication.SampleJdbcDaoImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -53,15 +54,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-            .dataSource(dataSource())
-            .usersByUsernameQuery("SELECT login_id, password, true "
-                + "FROM t_user "
-                + "WHERE login_id = ?")
-            .authoritiesByUsernameQuery("SELECT login_id, role_name "
-                + "FROM t_role "
-                + "     INNER JOIN t_user_role ON t_user_role.role_id = t_role.id "
-                + "     INNER JOIN t_user ON t_user.id = t_user_role.user_id "
-                + "WHERE login_id = ?");
+        //auth.jdbcAuthentication()
+        //    .dataSource(dataSource())
+        //    .usersByUsernameQuery("SELECT login_id, password, true "
+        //        + "FROM t_user "
+        //        + "WHERE login_id = ?")
+        //    .authoritiesByUsernameQuery("SELECT login_id, role_name "
+        //        + "FROM t_role "
+        //        + "     INNER JOIN t_user_role ON t_user_role.role_id = t_role.id "
+        //        + "     INNER JOIN t_user ON t_user.id = t_user_role.user_id "
+        //        + "WHERE login_id = ?");
+
+        SampleJdbcDaoImpl userService = new SampleJdbcDaoImpl();
+        userService.setDataSource(dataSource());
+        userService.setUsersByUsernameQuery("SELECT login_id, password, true, full_name, dept_name "
+            + "FROM t_user "
+            + "WHERE login_id = ?");
+        userService.setAuthoritiesByUsernameQuery("SELECT login_id, role_name "
+            + "FROM t_role "
+            + "     INNER JOIN t_user_role ON t_user_role.role_id = t_role.id "
+            + "     INNER JOIN t_user ON t_user.id = t_user_role.user_id "
+            + "WHERE login_id = ?");
+        auth.userDetailsService(userService);
     }
 }

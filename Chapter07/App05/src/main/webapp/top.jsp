@@ -13,7 +13,9 @@
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
   <sec:authentication var="user" property="principal"/>
-  로그인 유저：${user.username}
+  로그인 유저：${user.username}<br>
+  전체이름: ${user.fullName}<br>
+  부서명: ${user.deptName}
 </sec:authorize>
 <h1>톱페이지</h1>
 톱 페이지입니다.

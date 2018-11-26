@@ -38,6 +38,7 @@
         <jdbc:script location="classpath:/META-INF/db/dml.sql"/>
     </jdbc:embedded-database>
 
+    <!--
     <authentication-manager>
         <authentication-provider>
             <jdbc-user-service
@@ -51,6 +52,31 @@
                                                       INNER JOIN t_user ON t_user.id = t_user_role.user_id
                                                 WHERE login_id = ?"/>
         </authentication-provider>
+    </authentication-manager>
+    -->
+
+    <beans:bean id="userService" class="net.homenet.authentication.SampleJdbcDaoImpl">
+        <beans:property name="dataSource" ref="authDataSource"/>
+        <beans:property name="usersByUsernameQuery">
+            <beans:value>
+                SELECT login_id, password, true, full_name, dept_name
+                  FROM t_user
+                 WHERE login_id = ?
+            </beans:value>
+        </beans:property>
+        <beans:property name="authoritiesByUsernameQuery">
+            <beans:value>
+                SELECT login_id, role_name
+                  FROM t_role
+                       INNER JOIN t_user_role ON t_user_role.role_id = t_role.id
+                       INNER JOIN t_user ON t_user.id = t_user_role.user_id
+                 WHERE login_id = ?
+            </beans:value>
+        </beans:property>
+    </beans:bean>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="userService"/>
     </authentication-manager>
 
 </beans:beans>

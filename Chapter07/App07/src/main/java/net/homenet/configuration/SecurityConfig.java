@@ -77,6 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             + "     INNER JOIN t_user_role ON t_user_role.role_id = t_role.id "
             + "     INNER JOIN t_user ON t_user.id = t_user_role.user_id "
             + "WHERE login_id = ?");
-        auth.userDetailsService(userService);
+        auth.userDetailsService(userService)
+            .passwordEncoder(new BCryptPasswordEncoder());
     }
 }

@@ -18,16 +18,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/top.jsp").permitAll()
-                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                .anyRequest().authenticated()
+            .antMatchers("/top.jsp").permitAll()
+            .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+            .anyRequest().authenticated()
             .and().formLogin()
-                .defaultSuccessUrl("/top.jsp")
+            .defaultSuccessUrl("/top.jsp")
             .and().logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/top.jsp")
-            .and().csrf()
-                .disable();
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/top.jsp")
+            .and().exceptionHandling()
+            .accessDeniedPage("/accessDeniedPage.jsp");
     }
 
     //# InMemory authentication

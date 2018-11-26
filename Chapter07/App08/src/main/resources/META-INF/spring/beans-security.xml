@@ -18,7 +18,7 @@
         <intercept-url pattern="/**" access="isAuthenticated()"/>
         <form-login default-target-url="/top.jsp"/>
         <logout logout-url="/logout" logout-success-url="/top.jsp"/>
-        <csrf disabled="true"/>
+        <access-denied-handler error-page="/accessDenied.jsp"/>
     </http>
 
     <!-- InMemory authentication

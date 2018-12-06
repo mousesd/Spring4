@@ -1,15 +1,12 @@
 package net.homenet;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 @SuppressWarnings("WeakerAccess")
-@Component
 public class ProductServiceImpl implements ProductService {
-    private final ProductDao productDao;
+    private ProductDao productDao;
 
-    @Autowired
-    public ProductServiceImpl(ProductDao productDao) {
+    public ProductServiceImpl() { }
+
+    public void setProductDao(ProductDao productDao) {
         this.productDao = productDao;
     }
 

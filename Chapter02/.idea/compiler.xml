@@ -9,12 +9,14 @@
         <module name="App01" />
         <module name="App02" />
         <module name="App03" />
+        <module name="App04" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="App01" target="1.8" />
       <module name="App02" target="1.8" />
       <module name="App03" target="1.8" />
+      <module name="App04" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

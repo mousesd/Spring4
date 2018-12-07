@@ -9,7 +9,7 @@ public class Main {
 
         ProductService productService = context.getBean(ProductService.class);
         productService.addProduct(new Product("Book", 100));
-        Product product = productService.findByProductName("Book");
+        Product product = productService.findProduct("Book");
         System.out.println(product);
     }
 }

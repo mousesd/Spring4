@@ -19,7 +19,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product findByProductName(String name) {
+    public Product findProduct(String name) {
         return productDao.findByProductName(name);
+        //throw new RuntimeException();
     }
 }

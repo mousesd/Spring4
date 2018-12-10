@@ -1,5 +1,6 @@
 package net.homenet;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
@@ -8,13 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductAspect {
     @Before("execution(* findProduct(String))")
-    public void before() {
+    public void before(JoinPoint joinPoint) {
         System.out.println("*** Before Aspect ***");
+        System.out.println("\t- Method Name:" + joinPoint.getSignature().getName() + "()");
+        System.out.println("\t- Arguments:" + joinPoint.getArgs()[0]);
     }
 
     @After("execution(* findProduct(String))")
-    public void after() {
+    public void after(JoinPoint joinPoint) {
         System.out.println("*** After Aspect ***");
+        System.out.println("\t- Method Name:" + joinPoint.getSignature().getName() + "()");
+        System.out.println("\t- Arguments:" + joinPoint.getArgs()[0]);
     }
 
     @AfterReturning(value = "execution(* findProduct(String))", returning = "product")

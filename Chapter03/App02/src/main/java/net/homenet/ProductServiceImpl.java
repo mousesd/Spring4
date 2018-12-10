@@ -4,11 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @SuppressWarnings("WeakerAccess")
-@Component
 public class ProductServiceImpl implements ProductService {
     private final ProductDao productDao;
 
-    @Autowired
     public ProductServiceImpl(ProductDao productDao) {
         this.productDao = productDao;
     }

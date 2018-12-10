@@ -6,7 +6,6 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
-@Component
 public class ProductAspect {
     @Before("execution(* findProduct(String))")
     public void before(JoinPoint joinPoint) {

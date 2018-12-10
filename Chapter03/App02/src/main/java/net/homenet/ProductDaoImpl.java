@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
 public class ProductDaoImpl implements ProductDao {
     private Map<String, Product> storage = new HashMap<>();
 

@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.sql.DataSource;
 
@@ -40,6 +42,15 @@ public class DataSourceConfiguration {
         dataSource.setUsername(username);
         dataSource.setPassword(password);
         dataSource.setMaxActive(maxPoolSize);
+
+        runInitializeScripts(dataSource);
         return dataSource;
+    }
+
+    private void runInitializeScripts(DataSource dataSource) {
+        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+        populator.addScript(new ClassPathResource("scripts/table.sql"));
+        populator.addScript(new ClassPathResource("scripts/data.sql"));
+        populator.execute(dataSource);
     }
 }

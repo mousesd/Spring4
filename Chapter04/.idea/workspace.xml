@@ -8,21 +8,23 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7169f79-d85d-4cd4-982a-34c35ef3a638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App07/App07.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/java/net/homenet/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/java/net/homenet/JdbcAccountDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/java/net/homenet/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/resources/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App07/src/main/resources/scripts/initialScripts.sql" afterDir="false" />
+    <list default="true" id="b7169f79-d85d-4cd4-982a-34c35ef3a638" name="Default Changelist" comment="Chapter4:App06, #1) Get the DataSource use Java configuration(EmbeddedDatabaseBuilder)">
+      <change afterPath="$PROJECT_DIR$/App08/App08.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/domain/Owner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/domain/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplateOwnerDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplatePetDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/OwnerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/PetDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App08/src/main/resources/scripts/initializeScript.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App03/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App03/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App05/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App05/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App07/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App07/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/App01/target/" />
     <ignored path=".idea/libraries/" />
@@ -33,6 +35,7 @@
     <ignored path="$PROJECT_DIR$/App05/target/" />
     <ignored path="$PROJECT_DIR$/App06/target/" />
     <ignored path="$PROJECT_DIR$/App07/target/" />
+    <ignored path="$PROJECT_DIR$/App08/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,46 +67,49 @@
         <counts>
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="57" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="80" />
           <entry key="properties" value="8" />
-          <entry key="sql" value="12" />
-          <entry key="xml" value="35" />
+          <entry key="sql" value="16" />
+          <entry key="xml" value="41" />
           <entry key="xsd" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="57" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="80" />
           <entry key="Properties" value="8" />
-          <entry key="SQL" value="12" />
-          <entry key="XML" value="36" />
+          <entry key="SQL" value="16" />
+          <entry key="XML" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3302" />
+          <entry key="java" value="5513" />
           <entry key="properties" value="167" />
-          <entry key="sql" value="135" />
-          <entry key="txt" value="115" />
-          <entry key="xml" value="982" />
+          <entry key="sql" value="148" />
+          <entry key="txt" value="117" />
+          <entry key="xml" value="1187" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3301" />
-          <entry key="PLAIN_TEXT" value="115" />
+          <entry key="JAVA" value="5511" />
+          <entry key="PLAIN_TEXT" value="117" />
           <entry key="Properties" value="167" />
-          <entry key="SQL" value="136" />
+          <entry key="SQL" value="150" />
           <entry key="SpEL" value="1" />
-          <entry key="XML" value="981" />
+          <entry key="XML" value="1186" />
         </counts>
       </usages-collector>
     </session>
@@ -111,55 +117,33 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountDao.java">
+            <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/PetDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="64">
-                  <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountConfiguration.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+                <state relative-caret-position="144">
+                  <caret line="12" selection-start-line="12" selection-end-line="12" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#690#691#0" expanded="true" />
-                    <element signature="e#747#748#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/App07/src/main/resources/scripts/initialScripts.sql">
+            <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/domain/Pet.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="96">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="756">
+                  <caret line="72" selection-start-line="72" selection-end-line="72" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/Account.java">
+            <entry file="file://$PROJECT_DIR$/App08/src/main/resources/scripts/initializeScript.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-                  <folding>
-                    <element signature="e#22#55#0" expanded="true" />
-                    <element signature="e#138#139#0" expanded="true" />
-                    <element signature="e#170#171#0" expanded="true" />
-                    <element signature="e#220#221#0" expanded="true" />
-                    <element signature="e#262#263#0" expanded="true" />
-                    <element signature="e#297#298#0" expanded="true" />
-                    <element signature="e#327#328#0" expanded="true" />
-                    <element signature="e#374#375#0" expanded="true" />
-                    <element signature="e#412#413#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="320">
+                  <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
                 </state>
               </provider>
             </entry>
@@ -167,27 +151,24 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/JdbcAccountDaoImpl.java">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplatePetDaoImpl.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1008">
-                  <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+                <state relative-caret-position="596">
+                  <caret line="75" selection-start-line="75" selection-end-line="75" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#145#219#0" expanded="true" />
-                    <element signature="e#203#204#0" expanded="true" />
-                    <element signature="e#247#248#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/Main.java">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
+                <state relative-caret-position="208">
+                  <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -250,7 +231,6 @@
         <option value="$PROJECT_DIR$/App06/pom.xml" />
         <option value="$PROJECT_DIR$/App06/src/main/java/net/homenet/DataSourceConfiguration.java" />
         <option value="$PROJECT_DIR$/App06/src/main/java/net/homenet/Main.java" />
-        <option value="$PROJECT_DIR$/App07/pom.xml" />
         <option value="$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountDao.java" />
         <option value="$PROJECT_DIR$/App07/src/main/java/net/homenet/JdbcAccountDaoImpl.java" />
         <option value="$PROJECT_DIR$/App07/src/main/java/net/homenet/Account.java" />
@@ -259,6 +239,21 @@
         <option value="$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountConfiguration.java" />
         <option value="$PROJECT_DIR$/App07/src/main/java/net/homenet/Main.java" />
         <option value="$PROJECT_DIR$/App07/src/main/resources/scripts/initialScripts.sql" />
+        <option value="$PROJECT_DIR$/App07/pom.xml" />
+        <option value="$PROJECT_DIR$/App08/pom.xml" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/Pet.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/Owner.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/PetDao.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/OwnerDao.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/JdbcTemplatePetDaoImpl.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/JdbcTemplateOwnerDaoImpl.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/App08/src/main/resources/scripts/initializeScript.sql" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplateOwnerDaoImpl.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/domain/Pet.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/PetDao.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/Main.java" />
+        <option value="$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplatePetDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -295,7 +290,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,14 +325,62 @@
             </path>
             <path>
               <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
-              <item name="App07" type="462c0819:PsiDirectoryNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="homenet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="homenet" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="homenet" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Chapter04" type="b2602c69:ProjectViewProjectNode" />
-              <item name="App07" type="462c0819:PsiDirectoryNode" />
+              <item name="App08" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -349,6 +391,7 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,7 +399,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/Android/android-sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544607457900" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544609827730" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -369,11 +412,11 @@
       <recent name="net.homenet" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\Spring\Spring4\Chapter04\App08\src\main\resources" />
       <recent name="D:\Java\Spring\Spring4\Chapter04\App07\src\main\resources" />
       <recent name="D:\Java\Spring\Spring4\Chapter04\App06\src\main\resources" />
       <recent name="D:\Java\Spring\Spring4\Chapter04\App04\src\main\resources" />
       <recent name="D:\Java\Spring\Spring4\Chapter04\App03\src\main\resources" />
-      <recent name="D:\Java\Spring\Spring4\Chapter04\App05\src\main\resources\scripts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -388,7 +431,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App07, Use a JDBC">
+  <component name="RunManager" selected="Application.App08, Use a Spring JDBC(Bean configuration)">
     <configuration name="App01, Get the DataSource use a util schema" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.homenet.Main" />
       <module name="App01" />
@@ -438,6 +481,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="App08, Use a Spring JDBC(Bean configuration)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="net.homenet.Main" />
+      <module name="App08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.App01, Get the DataSource use a util schema" />
       <item itemvalue="Application.App02, Get the DataSource use a Java configuration" />
@@ -446,6 +496,7 @@
       <item itemvalue="Application.App05, Get the DataSource use a jdbc schema(jdbc:embedded-database)" />
       <item itemvalue="Application.App06, Get the DataSource use Java configuration(EmbeddedDatabaseBuilder)" />
       <item itemvalue="Application.App07, Use a JDBC" />
+      <item itemvalue="Application.App08, Use a Spring JDBC(Bean configuration)" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -461,7 +512,9 @@
       <workItem from="1544430576448" duration="1176000" />
       <workItem from="1544571810829" duration="5461000" />
       <workItem from="1544582300133" duration="6552000" />
-      <workItem from="1544596329117" duration="7668000" />
+      <workItem from="1544596329117" duration="10098000" />
+      <workItem from="1544610810559" duration="1497000" />
+      <workItem from="1544612506247" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="Chapter4:App01, Initialize">
       <created>1544430850955</created>
@@ -533,11 +586,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544601567815</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Chapter4:App07, Use a JDBC">
+      <created>1544607501985</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1544607501986</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20857000" />
+    <option name="totallyTimeSpent" value="24881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -566,14 +626,14 @@
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49880764" weight="0.31045243" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.51868045" side_tool="true" weight="0.30210772" />
       <window_info anchor="bottom" id="TODO" order="13" sideWeight="0.49960256" side_tool="true" weight="0.30210772" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5190779" side_tool="true" visible="true" weight="0.30210772" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.52066773" side_tool="true" visible="true" weight="0.29586262" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="16" sideWeight="0.48052463" weight="0.29586262" />
+      <window_info anchor="bottom" id="Version Control" order="16" sideWeight="0.47933227" visible="true" weight="0.29586262" />
       <window_info anchor="bottom" id="Java Enterprise" order="17" sideWeight="0.49960256" weight="0.32943013" />
       <window_info anchor="bottom" id="Application Servers" order="18" sideWeight="0.4964229" weight="0.26541764" />
       <window_info anchor="bottom" id="SQL Generator" order="19" sideWeight="0.49761525" weight="0.29898515" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="1" sideWeight="0.49828961" visible="true" weight="0.16931638" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="1" sideWeight="0.49828961" visible="true" weight="0.17170112" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -626,102 +686,10 @@
     <MESSAGE value="Chapter4:App04, #2) Get the DataSource use a Java configuration(PropertySourcesPlaceholder) and run initialize scripts" />
     <MESSAGE value="Chapter4:App05, Get the DataSource use a jdbc schema(jdbc:embedded-database)" />
     <MESSAGE value="Chapter4:App06, #1) Get the DataSource use Java configuration(EmbeddedDatabaseBuilder)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chapter4:App06, #1) Get the DataSource use Java configuration(EmbeddedDatabaseBuilder)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App07/src/main/java/net/homenet/Main.java</url>
-          <line>7</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Chapter4:App07, Use a JDBC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chapter4:App07, Use a JDBC" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/sql/Wrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/sql/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="1255" column="15" selection-start-line="1255" selection-start-column="15" selection-end-line="1255" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4-sources.jar!/org/apache/commons/dbcp/BasicDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="62" column="67" selection-start-line="62" selection-start-column="67" selection-end-line="62" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.1.6.RELEASE/spring-beans-4.1.6.RELEASE.jar!/org/springframework/beans/factory/xml/spring-util-4.1.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="162" column="4" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App01/src/main/resources/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App01/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App02/src/main/resources/applicationContext.xml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.1.6.RELEASE/spring-core-4.1.6.RELEASE-sources.jar!/org/springframework/core/io/support/PropertiesLoaderUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="118" column="29" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App02/src/main/java/net/homenet/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App02/src/main/java/net/homenet/DataSourceConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App02/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="3" selection-start-line="1" selection-end-line="1" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App01/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -733,9 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="18" selection-start-line="12" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,9 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,9 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#1515#1523#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -808,9 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,9 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,12 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="52" column="73" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="73" />
-          <folding>
-            <element signature="e#4419#4420#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4530#4531#0" expanded="true" />
-            <element signature="e#4555#4556#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,17 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding>
-            <element signature="e#2971#2972#0" expanded="true" />
-            <element signature="e#3010#3011#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App05/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -900,9 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -910,9 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -920,9 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -940,27 +867,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App07/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.1.6.RELEASE/spring-tx-4.1.6.RELEASE-sources.jar!/org/springframework/dao/DuplicateKeyException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App06/src/main/resources/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App07/src/main/resources/scripts/data.sql" />
+    <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -975,6 +898,20 @@
             <element signature="e#203#204#0" expanded="true" />
             <element signature="e#247#248#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App07/src/main/resources/scripts/initialScripts.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -996,41 +933,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App07/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="85" lean-forward="true" selection-start-line="9" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App07/App07.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/resources/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/App07/src/main/resources/log4j.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/App06/src/main/resources/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App07/src/main/resources/scripts/data.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/Main.java">
+    <entry file="file://$PROJECT_DIR$/App05/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="608">
+          <caret line="38" lean-forward="true" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplateOwnerDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App07/src/main/java/net/homenet/AccountConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/OwnerDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="32">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App07/src/main/resources/scripts/initialScripts.sql">
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/domain/Owner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/PetDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/resources/scripts/initializeScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/domain/Pet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App08/src/main/java/net/homenet/repository/JdbcTemplatePetDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,7 +1104,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>App07</last-edited>
+          <last-edited>App08</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jdbc
+        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <!-- Use a util schema
+    <util:properties id="jdbcProperties" location="jdbc.properties"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="#{jdbcProperties.driverName}"/>
+        <property name="url" value="#{jdbcProperties.url}"/>
+        <property name="username" value="#{jdbcProperties.username}"/>
+        <property name="password" value="#{jdbcProperties.password}"/>
+        <property name="maxActive" value="#{jdbcProperties.maxPoolSize}"/>
+    </bean>
+    -->
+
+    <!-- USe a context schema(context:property-placeholder)
+    <context:property-placeholder location="jdbc.properties"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${driverName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="maxActive" value="${maxPoolSize}"/>
+    </bean>
+    -->
+
+    <jdbc:embedded-database id="dataSource" type="HSQL">
+        <jdbc:script location="scripts/table.sql"/>
+        <jdbc:script location="scripts/data.sql"/>
+    </jdbc:embedded-database>
+</beans>

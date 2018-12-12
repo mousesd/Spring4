@@ -12,6 +12,7 @@
         <module name="App04" />
         <module name="App05" />
         <module name="App06" />
+        <module name="App07" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="App04" target="1.8" />
       <module name="App05" target="1.8" />
       <module name="App06" target="1.8" />
+      <module name="App07" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,6 +9,9 @@
     <logger name="org.springframework.beans">
         <level value="debug"/>
     </logger>
+    <logger name="net.homenet.*">
+        <level value="debug"/>
+    </logger>
     <root>
         <priority value="error"/>
         <appender-ref ref="stdout"/>

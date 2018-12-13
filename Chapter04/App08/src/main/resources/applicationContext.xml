@@ -11,13 +11,18 @@
 
     <jdbc:embedded-database id="dataSource">
         <jdbc:script location="scripts/initializeScript.sql"/>
+        <jdbc:script location="scripts/procedure.sql" separator="/"/>
     </jdbc:embedded-database>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <constructor-arg ref="dataSource"/>
     </bean>
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
     <bean id="petDao" class="net.homenet.repository.JdbcTemplatePetDaoImpl">
         <constructor-arg ref="jdbcTemplate"/>
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
     </bean>
     <bean id="ownerDao" class="net.homenet.repository.JdbcTemplateOwnerDaoImpl">
         <constructor-arg ref="jdbcTemplate"/>

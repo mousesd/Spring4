@@ -3,7 +3,7 @@ package net.homenet.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({ "WeakerAccess", "unused" })
 public class Owner {
     private String ownerName;
     private List<Pet> pets = new ArrayList<>();
@@ -29,5 +29,13 @@ public class Owner {
 
     public void setPets(List<Pet> pets) {
         this.pets = pets;
+    }
+
+    @Override
+    public String toString() {
+        return "Owner[" +
+            "ownerName='" + ownerName + '\'' +
+            ", pets=" + pets +
+            "]";
     }
 }

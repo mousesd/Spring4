@@ -6,10 +6,15 @@
             <param name="ConversionPattern" value="%d %-5p (%F:%L - %M) - %m%n"/>
         </layout>
     </appender>
+    <!--
     <logger name="org.springframework.beans">
         <level value="debug"/>
     </logger>
     <logger name="net.homenet.*">
+        <level value="debug"/>
+    </logger>
+    -->
+    <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <level value="debug"/>
     </logger>
     <root>

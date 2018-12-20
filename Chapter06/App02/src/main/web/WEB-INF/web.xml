@@ -19,7 +19,7 @@
     </context-param>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>net.homenet.controller.CustomerConfiguration</param-value>
+        <param-value>net.homenet.configuration.CustomerConfiguration</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

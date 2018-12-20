@@ -11,7 +11,8 @@
 
     <context:component-scan base-package="net.homenet.service"/>
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="META-INF.messages"/>
+        <!--suppress SpringXmlModelInspection -->
+        <property name="basename" value="classpath:/META-INF/messages"/>
     </bean>
     <bean id="globalValidator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <property name="validationMessageSource" ref="messageSource"/>

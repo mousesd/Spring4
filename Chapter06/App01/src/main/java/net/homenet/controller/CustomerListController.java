@@ -59,6 +59,6 @@ public class CustomerListController {
         System.out.println("FileName: " + multipartFile.getOriginalFilename());
         System.out.println("Size: " + multipartFile.getSize());
         System.out.println("ContentType: " + multipartFile.getContentType());
-        return "customer/list";
+        return "redirect:/customer";
     }
 }

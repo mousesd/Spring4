@@ -6,7 +6,6 @@ import net.homenet.service.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,6 +14,7 @@ import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
+@SuppressWarnings("Duplicates")
 @Controller
 public class CustomerListController {
     @Autowired
@@ -45,10 +45,4 @@ public class CustomerListController {
         model.addAttribute("customer", customer);
         return "customer/detail";
     }
-
-    //# 1.Handle exception use the @ExceptionHandler
-    //@ExceptionHandler(DataNotFoundException.class)
-    //public String handleException() {
-    //    return "customer/notfound";
-    //}
 }

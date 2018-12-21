@@ -18,7 +18,7 @@
         <property name="validationMessageSource" ref="messageSource"/>
     </bean>
 
-    <!-- 2.Handle exception use the HandlerExceptionResolver -->
+    <!-- 2.Handle exception use the HandlerExceptionResolver
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
@@ -26,4 +26,5 @@
             </props>
         </property>
     </bean>
+     -->
 </beans>

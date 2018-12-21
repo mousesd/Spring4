@@ -17,4 +17,13 @@
     <bean id="globalValidator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <property name="validationMessageSource" ref="messageSource"/>
     </bean>
+
+    <!-- 2.Handle exception use the HandlerExceptionResolver -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="net.homenet.service.DataNotFoundException">/customer/notfound</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

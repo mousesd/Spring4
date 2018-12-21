@@ -46,8 +46,9 @@ public class CustomerListController {
         return "customer/detail";
     }
 
-    @ExceptionHandler(DataNotFoundException.class)
-    public String handleException() {
-        return "customer/notfound";
-    }
+    //# 1.Handle exception use the @ExceptionHandler
+    //@ExceptionHandler(DataNotFoundException.class)
+    //public String handleException() {
+    //    return "customer/notfound";
+    //}
 }

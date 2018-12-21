@@ -8,6 +8,20 @@
 </head>
 <body>
 <h1>Customer List</h1>
+<%--@elvariable id="editCustomer" type="net.homenet.domain.Customer"--%>
+<core:if test="${editCustomer != null}">
+    Updated the below customer.
+    <dl>
+        <dt>Name</dt>
+        <dd><core:out value="${editCustomer.name}"/></dd>
+        <dt>Email Address</dt>
+        <dd><core:out value="${editCustomer.emailAddress}"/></dd>
+        <dt>Birthday</dt>
+        <dd><fmt:formatDate value="${editCustomer.birthDate}" pattern="yyyy/MM/dd"/></dd>
+        <dt>Favorite Number</dt>
+        <dd><core:out value="${editCustomer.favoriteNumber}"/></dd>
+    </dl>
+</core:if>
 <table border="1">
     <tr>
         <th>Id</th>

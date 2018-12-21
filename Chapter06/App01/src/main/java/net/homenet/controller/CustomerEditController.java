@@ -11,6 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -59,10 +60,23 @@ public class CustomerEditController {
         return "redirect:enter";
     }
 
+    //# 1./customer/{customerId}/edited 로 Redirect 하는 경우
+    //@RequestMapping(method = POST, value = "/review", params = "_event_confirmed")
+    //public String edit(@ModelAttribute("editCustomer") Customer customer) throws DataNotFoundException {
+    //    customerService.update(customer);
+    //    return "redirect:edited";
+    //}
+
+    //# 2./customer 로 Redirect 하는 경우
     @RequestMapping(method = POST, value = "/review", params = "_event_confirmed")
-    public String edit(@ModelAttribute("editCustomer") Customer customer) throws DataNotFoundException {
+    public String edit(@ModelAttribute("editCustomer") Customer customer
+        , SessionStatus status
+        , RedirectAttributes redirectAttributes) {
+
         customerService.update(customer);
-        return "redirect:edited";
+        status.setComplete();
+        redirectAttributes.addFlashAttribute("editCustomer", customer);
+        return "redirect:/customer";
     }
 
     @RequestMapping(method = GET, value = "/edited")

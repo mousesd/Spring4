@@ -18,7 +18,7 @@
         <property name="validationMessageSource" ref="messageSource"/>
     </bean>
 
-    <!-- 2.Handle exception use the HandlerExceptionResolver
+    <!-- Handle exception use the HandlerExceptionResolver
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
@@ -27,4 +27,7 @@
         </property>
     </bean>
      -->
+
+    <!-- Config the MultipartResolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 </beans>

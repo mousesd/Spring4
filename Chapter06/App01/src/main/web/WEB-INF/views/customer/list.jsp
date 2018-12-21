@@ -43,5 +43,7 @@
         </tr>
     </core:forEach>
 </table>
+<core:url value="/customer/uploadFile" var="url"/>
+<a href="${url}">Upload File</a>
 </body>
 </html>

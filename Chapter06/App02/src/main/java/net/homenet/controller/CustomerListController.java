@@ -9,10 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
+@SuppressWarnings("Duplicates")
 @Controller
 public class CustomerListController {
     @Autowired
@@ -27,6 +29,12 @@ public class CustomerListController {
     @RequestMapping(method = GET, value = "/customer")
     public String showAllCustomers(Model model) {
         List<Customer> customers = customerService.findAll();
+
+        //# DataNotFoundException 예외를 발생하기 위한 Customer 객체 추가
+        Customer invalidCustomer = new Customer("mousesd", "aaa@bbb.ccc", new Date(), 3);
+        invalidCustomer.setId(5);
+        customers.add(invalidCustomer);
+
         model.addAttribute("customers", customers);
         return "customer/list";
     }

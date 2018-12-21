@@ -13,7 +13,11 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="net.homenet.controller"/>
-    <mvc:annotation-driven validator="globalValidator" enable-matrix-variables="true"/>
+    <mvc:annotation-driven validator="globalValidator" enable-matrix-variables="true">
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
     <mvc:resources mapping="/resources/**" location="WEB-INF/resources/"/>
     <mvc:view-resolvers>
         <mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp"/>

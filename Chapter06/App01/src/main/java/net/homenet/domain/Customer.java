@@ -3,9 +3,11 @@ package net.homenet.domain;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 @SuppressWarnings("unused")
+@XmlRootElement
 public class Customer {
     private Integer id;
 

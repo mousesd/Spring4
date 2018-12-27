@@ -9,28 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7169f79-d85d-4cd4-982a-34c35ef3a638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/App03.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/java/net/homenet/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/java/net/homenet/domain/Owner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/java/net/homenet/domain/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/java/net/homenet/repository/JpaPetDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/java/net/homenet/repository/PetDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/resources/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/resources/scripts/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/resources/scripts/table.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App03/src/main/resources/spring/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/App04.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/java/net/homenet/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/java/net/homenet/configuration/PetConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/java/net/homenet/domain/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/java/net/homenet/repository/PetDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/resources/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/resources/scripts/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chapter08/App04/src/main/resources/scripts/table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chapter08/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter08/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chapter08/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter08/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/App01/target/" />
     <ignored path=".idea/libraries/" />
@@ -101,7 +80,7 @@
     <session id="-185847217">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="3" />
@@ -362,7 +341,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/Android/android-sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545805132269" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545805210075" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -516,7 +495,7 @@
       <workItem from="1544612506247" duration="200000" />
       <workItem from="1544658203940" duration="22751000" />
       <workItem from="1544744136808" duration="5632000" />
-      <workItem from="1545799039766" duration="1335000" />
+      <workItem from="1545799039766" duration="1376000" />
     </task>
     <task id="LOCAL-00001" summary="Chapter4:App01, Initialize">
       <created>1544430850955</created>
@@ -648,7 +627,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54702000" />
+    <option name="totallyTimeSpent" value="54743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />

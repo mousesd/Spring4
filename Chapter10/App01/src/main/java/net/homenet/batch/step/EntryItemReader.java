@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component("itemReader")
 public class EntryItemReader implements ItemReader<String> {
-    private final String[] INPUT_STRING = { "Hello, Spring Batch", "mousesd", "Hi", null };
+    private final String[] INPUT_STRING = { "Hello, Spring Batch", "mousesd", "Hi", "mousesd", null };
     private int index = 0;
 
     @Override

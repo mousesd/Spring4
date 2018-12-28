@@ -17,7 +17,7 @@
                     processor="itemProcessor"
                     writer="itemWriter"
                     commit-interval="1"
-                    skip-limit="1">
+                    skip-limit="2">
                     <batch:skippable-exception-classes>
                         <batch:include class="net.homenet.batch.exception.BatchSkipException"/>
                     </batch:skippable-exception-classes>

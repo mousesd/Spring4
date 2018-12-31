@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:batch="http://www.springframework.org/schema/batch"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/batch
+        http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+    <bean id="productItemReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
+        <!--suppress SpringElInspection -->
+        <!--<property name="resource" value="#{jobParameters[inputFile]}"/>-->
+        <!-- MultiResourcePartitioner 로 부터 파일정보는 얻는 경우 -->
+        <property name="resource" value="#{stepExecutionContext[fileName]}"/>
+        <property name="linesToSkip" value="1"/>
+        <property name="lineMapper">
+            <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+                <property name="lineTokenizer">
+                    <bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+                        <property name="delimiter" value=","/>
+                        <property name="names" value="name,price"/>
+                    </bean>
+                </property>
+                <property name="fieldSetMapper">
+                    <bean class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
+                        <property name="targetType" value="net.homenet.domain.Product"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    <bean id="productItemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+        <property name="dataSource" ref="jobDataSource"/>
+        <property name="sql" value="INSERT INTO PRODUCT (NAME, PRICE) VALUES (:name, :price)"/>
+        <property name="itemSqlParameterSourceProvider">
+            <bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider"/>
+        </property>
+    </bean>
+
+    <bean id="memberItemReader" class="org.springframework.batch.item.database.JdbcCursorItemReader">
+        <property name="dataSource" ref="jobDataSource"/>
+        <property name="rowMapper">
+            <!--
+            <bean class="org.springframework.jdbc.core.simple.ParameterizedBeanPropertyRowMapper">
+                <property name="mappedClass" value="net.homenet.domain.Member"/>
+            </bean>
+            -->
+            <bean class="org.springframework.jdbc.core.BeanPropertyRowMapper">
+                <property name="mappedClass" value="net.homenet.domain.Member"/>
+            </bean>
+        </property>
+        <property name="sql" value="SELECT * FROM MEMBER"/>
+    </bean>
+    <bean id="memberItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
+        <property name="resource" value="file:D:/Java/Member.csv"/>
+        <property name="shouldDeleteIfExists" value="true"/>
+        <property name="lineAggregator">
+            <bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+                <property name="fieldExtractor">
+                    <bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+                        <property name="names" value="memberId,name"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 순차 실행
+    <batch:job id="job1">
+        <batch:step id="step1" next="step2">
+            <batch:tasklet>
+                <batch:chunk reader="productItemReader" writer="productItemWriter" commit-interval="1"/>
+            </batch:tasklet>
+        </batch:step>
+        <batch:step id="step2">
+            <batch:tasklet>
+                <batch:chunk reader="memberItemReader" writer="memberItemWriter" commit-interval="1"/>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+    -->
+
+    <!-- 분기 실행: Step1이 정상실행 되면 Job 이 종료, 그렇지 않으면 Stop2가 실행
+    <batch:job id="job1">
+        <batch:step id="step1">
+            <batch:tasklet>
+                <batch:chunk reader="productItemReader" writer="productItemWriter" commit-interval="1"/>
+            </batch:tasklet>
+            <batch:end on="COMPLETED"/>
+            <batch:next on="*" to="step2"/>
+        </batch:step>
+        <batch:step id="step2">
+            <batch:tasklet>
+                <batch:chunk reader="memberItemReader" writer="memberItemWriter" commit-interval="1"/>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+    -->
+
+    <!-- 병행 실행(Split): Step1, Step2를 동시에 실행
+    <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
+    <batch:job id="job1">
+        <batch:split id="split1" task-executor="taskExecutor">
+            <batch:flow>
+                <batch:step id="step1">
+                    <batch:tasklet>
+                        <batch:chunk reader="productItemReader" writer="productItemWriter" commit-interval="1"/>
+                    </batch:tasklet>
+                </batch:step>
+            </batch:flow>
+            <batch:flow>
+                <batch:step id="step2">
+                    <batch:tasklet>
+                        <batch:chunk reader="memberItemReader" writer="memberItemWriter" commit-interval="1"/>
+                    </batch:tasklet>
+                </batch:step>
+            </batch:flow>
+        </batch:split>
+    </batch:job>
+    -->
+
+    <!-- 병행 실행(Partition): Step1를 동시에 병행 실행 -->
+    <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
+    <bean id="partitioner" class="org.springframework.batch.core.partition.support.MultiResourcePartitioner">
+        <property name="resources" value="classpath:**/META-INF/*.csv"/>
+    </bean>
+    <batch:step id="step1">
+        <batch:tasklet>
+            <batch:chunk reader="productItemReader" writer="productItemWriter" commit-interval="1"/>
+        </batch:tasklet>
+    </batch:step>
+    <batch:job id="job1">
+        <batch:step id="main">
+            <batch:partition step="step1" partitioner="partitioner">
+                <batch:handler grid-size="4" task-executor="taskExecutor"/>
+            </batch:partition>
+        </batch:step>
+    </batch:job>
+</beans>
